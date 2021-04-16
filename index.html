@@ -15,22 +15,28 @@
     
     <div class="form my-5">
         <form action="/users" id="user-form" onsubmit="event.preventDefault()">
+            <button class="btn btn-outline-dark" onclick="OpenForm('name-input-form')">Crear Nuevo</button>
+            <div class="d-none mt-5 m-4" id="name-input-form">
+                <label for="name-input">Nombre</label>
+                <input type="name" id="name-input">
+                <label for="email-input">Email</label>
+                <input type="email" name="email-input" id="email-input">
+                <label for="dog-number">Numero de perros</label>
+                <input type="number" name="dog-number" id="dog-number" onchange="getNumbOfDogs()" min="0">
+                <label for="adress">Direccion</label>
+                <input type="text" name="adress" id="adress">
+                <button class="btn btn-outline-dark ml-5" onclick="CloseForm('name-input-form'), Agregate() ">Agregar</button>
+            
+            </div>
 
-            <label for="name-input">Nombre</label>
-            <input type="name" id="name-input">
-            <label for="email-input">Email</label>
-            <input type="email" name="email-input" id="email-input">
-            <label for="dog-number">Numero de perros</label>
-            <input type="number" name="dog-number" id="dog-number" onchange="ShowNameFormInputOnNumberOfDogs()" min="0">
-            <div class="dogs-names">
-                <form onsubmit="event.preventDefault()">
-                    <div id="dog-names-container ">
-                        <!-- changes dynamic -->
-                        <label for="dog1">Nombre</label>
-                        <input type="text" name="dogname" class="dog-name-input">
-                        <label for="dog1">Nombre</label>
-                        <input type="text" name="dogname" class="dog-name-input">
-                        <!---------------------------->
+            <div class="dogs-names p-4 border border-white">
+                <form id="numb-of-dogs-form" onsubmit="event.preventDefault()">
+                    <div class="input-column">
+                        <!-- changes dynamicaly -->
+                        <div id="dog-names-container">
+
+                        </div>
+                        <!---------Ends Dynamicaly--------------->
                     </div>
                 
                 </form>
