@@ -64,7 +64,7 @@ function generateInputs(number){
         toPrint += `
         <div class="m-2"
         <label for="dog1 class="display-block">Nombre</label>
-        <input type="text class="display-block" name="dogname" id="d${i}"><br>      
+        <input type="text class="display-block" name="dogname" name="dog[]"><br>      
         </div>
         `
     }
@@ -97,31 +97,11 @@ function Agregate(){
 
 function getNamesFromImputs(htmlClass){
 
+    let container = document.getElementById('dog-names-container');
+    dogs = container.getElementsByTagName('input')
 
-    const dogNames = [];
-    const ForLoopLimit = getNumbOfDogs();
-    console.log(ForLoopLimit);
-
-    // const i = 1;
-
-
-    for (let i = 0; i < ForLoopLimit; i++) {
-
-        const id = `d${i}`
-        const name = document.getElementById(id).value;
-        
-        console.log(name);
-
-    }
-
-
-    // console.log(dogNames);
-
-
+    console.log(dogs);
 }
-
-
-
 
 
 
